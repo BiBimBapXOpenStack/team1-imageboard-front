@@ -35,4 +35,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             whoami
-            ./team1-imageboard-front/bin/setup.sh ${{ secrets.SERVER_URL }}
+            cd /home/ubuntu/team1-imageboard-front/bin
+            ./pull.sh
