@@ -11,7 +11,7 @@ export default ({post}) => {
     const navigate = useNavigate();
 
     const client = useSelector(({user}) => user.userId);
-    const {id, title, content, userId, imgId} = post;
+    const {id, title, content, userId, imageUrl,imageId} = post;
 
     const onDelete = () => {
         dispatch(deletePost(id));
@@ -22,7 +22,7 @@ export default ({post}) => {
         <div
             className="w-75 h-100 p-3 d-flex flex-column justify-content-start align-items-center">
             <h3 className="mb-3">{title}</h3>
-            <img className="w-50 h-50 mb-3" style={{maxHeight:'500px'}} src={"http://"+process.env.REACT_APP_HTTP_URL+"/api/images/" + imgId}/>
+            <img className="w-50 h-50 mb-3" style={{maxHeight:'500px'}} src={imageUrl}/>
             <pre>
                 {content}
             </pre>
@@ -46,7 +46,7 @@ export default ({post}) => {
                         </>
                     )
                 }
-                <ImageDownloadButton imageId={imgId}/>
+                <ImageDownloadButton imageId={imageId}/>
                 <Button
                     className="w-auto"
                     type="submit"

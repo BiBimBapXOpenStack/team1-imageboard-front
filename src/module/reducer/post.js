@@ -85,19 +85,23 @@ export function* postSaga() {
 
 const initState = {
     id: null,
-    userId: null,
     title: "",
     content: "",
-    imgId: null,
+
+    imageId:null,
+    imageUrl: null,
+
+    userId: null,
 }
 
 export default handleActions({
     [LOAD_POST_SUCCESS]: (state, {payload}) => ({
         ...state,
-        userId: payload.userId,
-        imgId: payload.imgId,
+        title: payload.title,
         content: payload.content,
-        title: payload.title
+        imageId: payload.imageId,
+        imageUrl: payload.imageUrl,
+        userId: payload.userId,
     }),
     [IMAGE_DOWNLOAD_SUCCESS]: (state) => ({
         ...state,
