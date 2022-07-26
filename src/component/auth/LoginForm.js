@@ -46,7 +46,7 @@ export default () => {
     return (
         <>
             <Form onSubmit={e=>onSubmit(e)} className="w-50 border rounded p-5 pt-4 border-primary">
-                <h2 className="mb-5">Login</h2>
+                <h2 className="mb-5">Login Login</h2>
                 {
                     errMsg && <span className="text-danger fw-bolder">{errMsg}</span>
                 }
